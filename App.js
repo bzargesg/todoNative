@@ -1,6 +1,6 @@
 import React from 'react';
 import { StyleSheet, Text, View, TextInput, TouchableHighlight } from 'react-native';
-import { Fancy } from './components/FancyComponent';
+import { Reddit } from './reddit';
 export default class App extends React.Component {
   constructor(props){
     super(props);
@@ -19,25 +19,26 @@ export default class App extends React.Component {
     })
   }
   render(){
-    return (
-    <View style={styles.container}>
-      {/* <Fancy /> */}
-      <Text>Todo List length</Text>
-      <View style={styles.form}>
-        <TextInput 
-        style={styles.input}
-        value={this.state.newTodo} onChangeText={this.textChange.bind(this)}/>
-        <TouchableHighlight
-         style={styles.button}
-         onPress={this.buttonClick.bind(this)}>
-          <Text style={styles.buttonText}>tap me</Text>
-        </TouchableHighlight>
-      </View>
-      <View style={styles.todos}>
-      {this.state.todos.map((todo, i)=><Text style={styles.todo} key={i}>{todo}</Text>)}
-      </View>
-    </View>
-  );
+    return <Reddit />;
+  //   return (
+  //   <View style={styles.container}>
+  //     {/* <Fancy /> */}
+  //     <Text>Todo List</Text>
+  //     <View style={styles.form}>
+  //       <TextInput 
+  //       style={styles.input}
+  //       value={this.state.newTodo} onChangeText={this.textChange.bind(this)}/>
+  //       <TouchableHighlight
+  //        style={styles.button}
+  //        onPress={this.buttonClick.bind(this)}>
+  //         <Text style={styles.buttonText}>tap me</Text>
+  //       </TouchableHighlight>
+  //     </View>
+  //     <View style={styles.todos}>
+  //     {this.state.todos.map((todo, i)=><Text style={styles.todo} key={i}>{todo}</Text>)}
+  //     </View>
+  //   </View>
+  // );
   }
 }
 
